@@ -113,8 +113,6 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Silvia Garzarella is a PhD candidate at the University of Bologna studying the remediation of intangible dance heritage, with a focus on the choreographic and archival afterlives of Rudolf Nureyev.
 ]
 
-#context if target() == "html" { html.elem("hr") }
-
 === Postdocs
 
 #person("Violaine Boutet de Monvel", affiliation-period: "September 2025 -- September 2026")[
@@ -136,8 +134,6 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 ]
 
 *Past Visitors:* Adrien Jeanrenaud (Geneva), Ludovica Schaerf (Zürich)
-
-#context if target() == "html" { html.elem("hr") }
 
 === PhD Students
 
