@@ -2,14 +2,37 @@
   doc
 }
 
-#let person(name, affiliation-period: none, body) = {
-  if affiliation-period != none [
-    *#affiliation-period: #name*\
-    #body
-  ] else [
-    *#name*\
-    #body
-  ]
+#let default-image = "https://content.fitz.ms/fitz-website/assets/impett_leonardo.jpeg"
+
+#let person(name, affiliation-period: none, image: none, body) = {
+  let img-src = if image != none { image } else { default-image }
+  let period = if affiliation-period != none and type(affiliation-period) == str {
+    affiliation-period.replace(" -- ", " \u{2013} ")
+  } else {
+    affiliation-period
+  }
+  context if target() == "html" {
+    html.elem("div", attrs: (class: "person"))[
+      #html.elem("img", attrs: (src: img-src, alt: name))
+      #html.elem("div")[
+        #if period != none [
+          *#period: #name*\
+          #body
+        ] else [
+          *#name*\
+          #body
+        ]
+      ]
+    ]
+  } else {
+    if period != none [
+      *#period: #name*\
+      #body
+    ] else [
+      *#name*\
+      #body
+    ]
+  }
 }
 
 #show: template.with(current-page: "index")
@@ -24,8 +47,6 @@ This is a small, unofficial page for the research group, which is divided betwee
     #html.elem("li")[#link("https://www.cdh.cam.ac.uk/")[Cambridge Digital Humanities]]
   ]
 }
-
-#context if target() == "html" { html.elem("hr") }
 
 == About
 
@@ -53,7 +74,10 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 
 === PI
 
-#person("Leonardo Impett")[
+#person(
+  "Leonardo Impett",
+  image: "https://content.fitz.ms/fitz-website/assets/impett_leonardo.jpeg",
+)[
   Research Group Leader (Bibliotheca Hertziana) and Assistant Professor (Cambridge Digital Humanities).
 ]
 
@@ -63,7 +87,11 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Sebastian Rozenberg is a PhD candidate at Linköping University working in media aesthetics and digital visual culture.
 ]
 
-#person("Tristan Dot (Cambridge)", affiliation-period: "September -- December 2025")[
+#person(
+  "Tristan Dot (Cambridge)",
+  affiliation-period: "September -- December 2025",
+  image: "https://www.gatescambridge.org/wp-content/uploads/2022/09/dot-scaled.jpg",
+)[
   Tristan Dot is a PhD candidate in Digital Art History at the University of Cambridge, researching nineteenth-century textile patterns and the epistemology of digital art history.
 ]
 
@@ -113,7 +141,11 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 
 === PhD Students
 
-#person("Tristan Dot", affiliation-period: "2022 -- 2026")[
+#person(
+  "Tristan Dot",
+  affiliation-period: "2022 -- 2026",
+  image: "https://www.gatescambridge.org/wp-content/uploads/2022/09/dot-scaled.jpg",
+)[
   (See above)
 ]
 
@@ -121,12 +153,20 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Alessandro Trevisan works on the philosophy of language in LLMs, including multimodality and vision, especially in dialogue with Wittgenstein.
 ]
 
-#person("Emmanuel Iduma", affiliation-period: "2024 -- 2028")[
+#person(
+  "Emmanuel Iduma",
+  affiliation-period: "2024 -- 2028",
+  image: "https://civi.gatescambridge.org/sites/www.gatescambridge.org/files/civicrm/persist/contribute/images/1000087701.jpg",
+)[
   Emmanuel Iduma is a writer, art critic and Gates Scholar.
   His research looks at Nigerian conflict photojournalism through the lens of distant viewing.
 ]
 
-#person("Eryk Salvaggio", affiliation-period: "2025 -- 2029")[
+#person(
+  "Eryk Salvaggio",
+  affiliation-period: "2025 -- 2029",
+  image: "https://civi.gatescambridge.org/civicrm/contact/imagefile?photo=Eryk_Salvaggio3574_7ac4b7b975e13b3e71d9cff06dcb9d7d.jpg",
+)[
   Eryk Salvaggio is a media artist and Gates Scholar studying generative AI from a digital-humanities perspective, focusing on archives, media ecologies, and critical data studies.
 ]
 

@@ -1,23 +1,14 @@
-.header {
-  max-height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header img {
-  max-height: 40px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 /* ============================================
    CSS Variables
    ============================================ */
 :root {
-  --background-color: #fdfdfd;
+  --background-color: #f9f6f0;
   --text-color: #1a1a1a;
   --link-color: #1a1a1a;
-  --blockquote-border: #e6e6e6;
-  --blockquote-text: #606060;
+  --border-color: #d4d0c8;
+  --muted-color: #606060;
 }
 
 /* ============================================
@@ -26,12 +17,12 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1em;
-  line-height: 1.3;
+  line-height: 1.5;
   margin: 0 auto;
   padding: 50px;
-  max-width: 36em;
+  max-width: 38em;
 }
 
 /* ============================================
@@ -39,9 +30,9 @@ body {
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
-  font-weight: normal;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  font-weight: 500;
+  margin-top: 1.75em;
+  margin-bottom: 0.4em;
 }
 
 /* ============================================
@@ -50,10 +41,13 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--link-color);
   text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.25s ease;
 }
 
 a:hover {
-  opacity: 0.7;
+  text-decoration-color: var(--link-color);
 }
 
 /* ============================================
@@ -63,8 +57,6 @@ ul, ol {
   padding-left: 2em;
   margin: 1em 0;
 }
-
-li {}
 
 /* ============================================
    Institution Grid
@@ -79,7 +71,7 @@ ul.institutions {
 }
 
 ul.institutions li {
-  border: 1px solid var(--blockquote-border);
+  border: 1px solid var(--border-color);
   margin: -0.5px;
 }
 
@@ -99,7 +91,32 @@ ul.institutions li a {
 ul.institutions li a:hover {
   background-color: var(--text-color);
   color: var(--background-color);
-  opacity: 1;
+}
+
+/* ============================================
+   Person Cards
+   ============================================ */
+.person {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25em;
+  margin: 1.5em 0;
+}
+
+.person img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.person > div {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ============================================
@@ -112,15 +129,21 @@ img, video {
   margin: 1.5em 0;
 }
 
+/* Override display:block for person images */
+.person img {
+  display: inline;
+  margin: 0;
+}
+
 /* ============================================
    Code
    ============================================ */
 code {
   font-family: 'Courier New', monospace;
-  background-color: #f5f5f5;
+  background-color: rgba(0, 0, 0, 0.06);
   padding: 0.2em 0.4em;
   border-radius: 3px;
-  font-size: 0.9em;
+  font-size: 0.88em;
 }
 
 /* ============================================
@@ -129,15 +152,19 @@ code {
 blockquote {
   margin: 1.5em 0;
   padding-left: 1em;
-  border-left: 2px solid var(--blockquote-border);
-  color: var(--blockquote-text);
+  border-left: 2px solid var(--border-color);
+  color: var(--muted-color);
   font-style: italic;
 }
 
+/* ============================================
+   Rules
+   ============================================ */
 hr {
   height: 1px;
-  background-color: var(--blockquote-border);
+  background-color: var(--border-color);
   border: none;
+  margin: 2em 0;
 }
 
 /* ============================================
@@ -146,7 +173,7 @@ hr {
 section[role="doc-endnotes"] {
   margin-top: 2em;
   padding-top: 1em;
-  border-top: 1px solid var(--blockquote-border);
+  border-top: 1px solid var(--border-color);
 }
 
 section[role="doc-endnotes"] ol li a[role="doc-backlink"] {
@@ -158,7 +185,12 @@ section[role="doc-endnotes"] ol li a[role="doc-backlink"] {
    ============================================ */
 @media (max-width: 600px) {
   body {
-    padding: 12px;
+    padding: 16px;
     font-size: 0.9em;
+  }
+
+  .person img {
+    width: 60px;
+    height: 60px;
   }
 }
