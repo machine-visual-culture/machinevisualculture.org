@@ -64,12 +64,6 @@ The group runs parallel nodes in *Rome* (Bibliotheca Hertziana) and *Cambridge* 
 
 More information here: #link("https://www.biblhertz.it/en/machine-visual-culture")[https://www.biblhertz.it/en/machine-visual-culture]
 
-#context if target() == "html" { html.elem("hr") }
-
-= People
-
-#context if target() == "html" { html.elem("hr") }
-
 == Rome Node
 
 === PI
@@ -123,9 +117,7 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Amira Moeding works on the intellectual history of computation, from early computational linguistics to contemporary AI, with interests in epistemic change in data-driven research cultures.
 ]
 
-#context if target() == "html" { html.elem("hr") }
-
-= Cambridge Node
+== Cambridge Node
 
 === Visitors
 
@@ -166,23 +158,17 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Eryk Salvaggio is a media artist and Gates Scholar studying generative AI from a digital-humanities perspective, focusing on archives, media ecologies, and critical data studies.
 ]
 
-#context if target() == "html" { html.elem("hr") }
-
-= Publications and Outputs
+== Publications and Outputs
 
 - Forthcoming: _Vector Media_ (Meson Press, 2025) by Leonardo Impett and Fabian Offert
 
-#context if target() == "html" { html.elem("hr") }
-
-= Events and News
+== Events and News
 
 - Upcoming and past visitors
 - Workshops and internal seminars
 - Conference presentations
 - Public lectures and exhibitions
 
-#context if target() == "html" { html.elem("hr") }
-
-= Contact
+== Contact
 
 If you really must
