@@ -2,14 +2,28 @@
   doc
 }
 
+#let person(name, affiliation-period: none, body) = {
+  if affiliation-period != none [
+    *#affiliation-period: #name*\
+    #body
+  ] else [
+    *#name*\
+    #body
+  ]
+}
+
 #show: template.with(current-page: "index")
 
 = Machine Visual Culture Research Group
 
 This is a small, unofficial page for the research group, which is divided between two institutions (each with their own institutional websites):
 
-#link("https://www.biblhertz.it/machine-visual-culture")[Bibliotheca Hertziana -- Max Planck Institute for Art History, Rome] and
-#link("https://www.cdh.cam.ac.uk/")[Cambridge Digital Humanities]
+#context if target() == "html" {
+  html.elem("ul", attrs: (class: "institutions"))[
+    #html.elem("li")[#link("https://www.biblhertz.it/machine-visual-culture")[Bibliotheca Hertziana -- Max Planck Institute for Art History, Rome]]
+    #html.elem("li")[#link("https://www.cdh.cam.ac.uk/")[Cambridge Digital Humanities]]
+  ]
+}
 
 #context if target() == "html" { html.elem("hr") }
 
@@ -38,39 +52,50 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 == Rome Node
 
 === PI
-Leonardo Impett is Research Group Leader (Bibliotheca Hertziana) and Assistant Professor (Cambridge Digital Humanities).
+
+#person("Leonardo Impett")[
+  Research Group Leader (Bibliotheca Hertziana) and Assistant Professor (Cambridge Digital Humanities).
+]
 
 === PhD fellows
 
-*September 2025 -- March 2026: Sebastian Rozenberg (Linköping)*\
-Sebastian Rozenberg is a PhD candidate at Linköping University working in media aesthetics and digital visual culture.
+#person("Sebastian Rozenberg (Linköping)", affiliation-period: "September 2025 -- March 2026")[
+  Sebastian Rozenberg is a PhD candidate at Linköping University working in media aesthetics and digital visual culture.
+]
 
-*September -- December 2025: Tristan Dot (Cambridge)*\
-Tristan Dot is a PhD candidate in Digital Art History at the University of Cambridge, researching nineteenth-century textile patterns and the epistemology of digital art history.
+#person("Tristan Dot (Cambridge)", affiliation-period: "September -- December 2025")[
+  Tristan Dot is a PhD candidate in Digital Art History at the University of Cambridge, researching nineteenth-century textile patterns and the epistemology of digital art history.
+]
 
-*October -- December 2025: Ellen Charlesworth (Durham)*\
-Ellen Charlesworth is an AHRC-funded PhD researcher at Durham University whose work examines how museums use digital platforms and how algorithmic infrastructures shape public access to cultural content.
+#person("Ellen Charlesworth (Durham)", affiliation-period: "October -- December 2025")[
+  Ellen Charlesworth is an AHRC-funded PhD researcher at Durham University whose work examines how museums use digital platforms and how algorithmic infrastructures shape public access to cultural content.
+]
 
-*January -- March 2026: Angel Fernandez (Malaga)*\
-To be added.
+#person("Angel Fernandez (Malaga)", affiliation-period: "January -- March 2026")[
+  To be added.
+]
 
 === Visitors
 
-*October 2025: Dominik Bönisch (Düsseldorf)*\
-Dominik Bönisch is a researcher at MIREVI, Düsseldorf, working on AI-based archiving, museum collections, and algorithmic mediation in cultural heritage.
+#person("Dominik Bönisch (Düsseldorf)", affiliation-period: "October 2025")[
+  Dominik Bönisch is a researcher at MIREVI, Düsseldorf, working on AI-based archiving, museum collections, and algorithmic mediation in cultural heritage.
+]
 
-*November 2025: Silvia Garzarella (Bologna / Utrecht)*\
-Silvia Garzarella is a PhD candidate at the University of Bologna studying the remediation of intangible dance heritage, with a focus on the choreographic and archival afterlives of Rudolf Nureyev.
+#person("Silvia Garzarella (Bologna / Utrecht)", affiliation-period: "November 2025")[
+  Silvia Garzarella is a PhD candidate at the University of Bologna studying the remediation of intangible dance heritage, with a focus on the choreographic and archival afterlives of Rudolf Nureyev.
+]
 
 #context if target() == "html" { html.elem("hr") }
 
 === Postdocs
 
-*September 2025 -- September 2026: Violaine Boutet de Monvel*\
-Violaine Boutet de Monvel works on noise and recursivity in art and media, from video feedback systems to generative AI, drawing on contemporary art theory and media studies.
+#person("Violaine Boutet de Monvel", affiliation-period: "September 2025 -- September 2026")[
+  Violaine Boutet de Monvel works on noise and recursivity in art and media, from video feedback systems to generative AI, drawing on contemporary art theory and media studies.
+]
 
-*April 2026 -- April 2027: Amira Moeding*\
-Amira Moeding works on the intellectual history of computation, from early computational linguistics to contemporary AI, with interests in epistemic change in data-driven research cultures.
+#person("Amira Moeding", affiliation-period: "April 2026 -- April 2027")[
+  Amira Moeding works on the intellectual history of computation, from early computational linguistics to contemporary AI, with interests in epistemic change in data-driven research cultures.
+]
 
 #context if target() == "html" { html.elem("hr") }
 
@@ -78,8 +103,9 @@ Amira Moeding works on the intellectual history of computation, from early compu
 
 === Visitors
 
-*September 2025 -- March 2026: Marta Pizzagalli (Lugano)*\
-Marta Pizzagalli is a PhD researcher at USI Lugano working on comparative literature, intermediality, and the visual apparatuses embedded in literary texts.
+#person("Marta Pizzagalli (Lugano)", affiliation-period: "September 2025 -- March 2026")[
+  Marta Pizzagalli is a PhD researcher at USI Lugano working on comparative literature, intermediality, and the visual apparatuses embedded in literary texts.
+]
 
 *Past Visitors:* Adrien Jeanrenaud (Geneva), Ludovica Schaerf (Zürich)
 
@@ -87,18 +113,22 @@ Marta Pizzagalli is a PhD researcher at USI Lugano working on comparative litera
 
 === PhD Students
 
-*2022 -- 2026: Tristan Dot*\
-(See above)
+#person("Tristan Dot", affiliation-period: "2022 -- 2026")[
+  (See above)
+]
 
-*2023 -- 2027: Alessandro Trevisan*\
-Alessandro Trevisan works on the philosophy of language in LLMs, including multimodality and vision, especially in dialogue with Wittgenstein.
+#person("Alessandro Trevisan", affiliation-period: "2023 -- 2027")[
+  Alessandro Trevisan works on the philosophy of language in LLMs, including multimodality and vision, especially in dialogue with Wittgenstein.
+]
 
-*2024 -- 2028: Emmanuel Iduma*\
-Emmanuel Iduma is a writer, art critic and Gates Scholar.
-His research looks at Nigerian conflict photojournalism through the lens of distant viewing.
+#person("Emmanuel Iduma", affiliation-period: "2024 -- 2028")[
+  Emmanuel Iduma is a writer, art critic and Gates Scholar.
+  His research looks at Nigerian conflict photojournalism through the lens of distant viewing.
+]
 
-*2025 -- 2029: Eryk Salvaggio*\
-Eryk Salvaggio is a media artist and Gates Scholar studying generative AI from a digital-humanities perspective, focusing on archives, media ecologies, and critical data studies.
+#person("Eryk Salvaggio", affiliation-period: "2025 -- 2029")[
+  Eryk Salvaggio is a media artist and Gates Scholar studying generative AI from a digital-humanities perspective, focusing on archives, media ecologies, and critical data studies.
+]
 
 #context if target() == "html" { html.elem("hr") }
 

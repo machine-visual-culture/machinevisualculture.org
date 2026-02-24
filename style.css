@@ -67,6 +67,42 @@ ul, ol {
 li {}
 
 /* ============================================
+   Institution Grid
+   ============================================ */
+ul.institutions {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin: 1.5em 0;
+}
+
+ul.institutions li {
+  border: 1px solid var(--blockquote-border);
+  margin: -0.5px;
+}
+
+ul.institutions li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5em 0.75em;
+  text-decoration: none;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
+  min-height: 3em;
+}
+
+ul.institutions li a:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  opacity: 1;
+}
+
+/* ============================================
    Media
    ============================================ */
 img, video {
@@ -100,8 +136,8 @@ blockquote {
 
 hr {
   height: 1px;
-  background-color: var(--blockquote-border); 
-  border: none; /* removes default border */
+  background-color: var(--blockquote-border);
+  border: none;
 }
 
 /* ============================================
