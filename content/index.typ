@@ -97,6 +97,12 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   To be added.
 ]
 
+#person("Lachlan Kermode (Brown)",
+  affiliation-period: "September 2026 -- January 2027", 
+  image: "./img/lachlankermode.jpg")[
+  Lachlan Kermode is a PhD Candidate in Modern Culture and Media (Brown University) and a Research Fellow at the research agencies Forensic Architecture (Goldsmiths, University of London) and LIMINAL (University of Bologna). He researches the history of computer science and software engineering, 20#super[th] century mathematics, and the critique of political economy.
+]
+
 === Visitors
 
 #person("Dominik Bönisch (Düsseldorf)", affiliation-period: "October 2025", image: "http://stiftung-imai.de/sites/default/files/media/images/2024-07/Boenisch_IMAI.jpg")[
