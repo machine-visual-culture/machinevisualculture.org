@@ -44,7 +44,7 @@ This is a small, unofficial page for the research group, which is divided betwee
 #context if target() == "html" {
   html.elem("ul", attrs: (class: "institutions"))[
     #html.elem("li")[#link("https://www.biblhertz.it/machine-visual-culture")[Bibliotheca Hertziana -- Max Planck Institute for Art History, Rome]]
-    #html.elem("li")[#link("https://www.cdh.cam.ac.uk/")[Cambridge Digital Humanities]]
+    #html.elem("li")[#link("https://www.cdh.cam.ac.uk/research/projects/machine-visual-culture/")[Cambridge Digital Humanities]]
   ]
 }
 
