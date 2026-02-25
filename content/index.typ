@@ -39,7 +39,7 @@
 
 = Machine Visual Culture Research Group
 
-This is a small, unofficial page for the research group, which is divided between two institutions (each with their own institutional websites):
+The research group is divided between two institutions, each with their own institutional websites:
 
 #context if target() == "html" {
   html.elem("ul", attrs: (class: "institutions"))[
@@ -77,7 +77,7 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 
 === PhD fellows
 
-#person("Sebastian Rozenberg (Linköping)", affiliation-period: "September 2025 -- March 2026")[
+#person("Sebastian Rozenberg (Linköping)", affiliation-period: "September 2025 -- March 2026", image: "https://liu.se/-/media/employeeimages/02/employee_image_sebro02.jpeg?as=1&w=300&h=300&cr=1&crw=300&crh=300&bc=%23ffffff&hash=D583B370596F408B29B84137F532A46B")[
   Sebastian Rozenberg is a PhD candidate at Linköping University working in media aesthetics and digital visual culture.
 ]
 
@@ -89,31 +89,31 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   Tristan Dot is a PhD candidate in Digital Art History at the University of Cambridge, researching nineteenth-century textile patterns and the epistemology of digital art history.
 ]
 
-#person("Ellen Charlesworth (Durham)", affiliation-period: "October -- December 2025")[
+#person("Ellen Charlesworth (Durham)", affiliation-period: "October -- December 2025", image: "https://www.cdh.cam.ac.uk/wp-content/uploads/2025/11/Ellen-Charlesworth-Affiliate.jpg")[
   Ellen Charlesworth is an AHRC-funded PhD researcher at Durham University whose work examines how museums use digital platforms and how algorithmic infrastructures shape public access to cultural content.
 ]
 
-#person("Angel Fernandez (Malaga)", affiliation-period: "January -- March 2026")[
+#person("Angel Fernandez (Malaga)", affiliation-period: "January -- March 2026", image: "./img/angelfernandez.jpg")[
   To be added.
 ]
 
 === Visitors
 
-#person("Dominik Bönisch (Düsseldorf)", affiliation-period: "October 2025")[
+#person("Dominik Bönisch (Düsseldorf)", affiliation-period: "October 2025", image: "http://stiftung-imai.de/sites/default/files/media/images/2024-07/Boenisch_IMAI.jpg")[
   Dominik Bönisch is a researcher at MIREVI, Düsseldorf, working on AI-based archiving, museum collections, and algorithmic mediation in cultural heritage.
 ]
 
-#person("Silvia Garzarella (Bologna / Utrecht)", affiliation-period: "November 2025")[
+#person("Silvia Garzarella (Bologna / Utrecht)", affiliation-period: "November 2025", image: "https://www.unibo.it/uniboweb/utils/UserImage.aspx?IdAnagrafica=770107&IdFoto=de134b37")[
   Silvia Garzarella is a PhD candidate at the University of Bologna studying the remediation of intangible dance heritage, with a focus on the choreographic and archival afterlives of Rudolf Nureyev.
 ]
 
 === Postdocs
 
-#person("Violaine Boutet de Monvel", affiliation-period: "September 2025 -- September 2026")[
+#person("Violaine Boutet de Monvel", affiliation-period: "September 2025 -- September 2026", image: "https://www.cdh.cam.ac.uk/wp-content/uploads/2025/11/Violaine-Boutet-de-Monvel-Affiliate.jpg")[
   Violaine Boutet de Monvel works on noise and recursivity in art and media, from video feedback systems to generative AI, drawing on contemporary art theory and media studies.
 ]
 
-#person("Amira Moeding", affiliation-period: "April 2026 -- April 2027")[
+#person("Amira Moeding", affiliation-period: "April 2026 -- April 2027", image: "https://www.cdh.cam.ac.uk/wp-content/uploads/2023/02/Amira-740x740.jpg")[
   Amira Moeding works on the intellectual history of computation, from early computational linguistics to contemporary AI, with interests in epistemic change in data-driven research cultures.
 ]
 
@@ -121,7 +121,7 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 
 === Visitors
 
-#person("Marta Pizzagalli (Lugano)", affiliation-period: "September 2025 -- March 2026")[
+#person("Marta Pizzagalli (Lugano)", affiliation-period: "September 2025 -- March 2026", image: "https://search.usi.ch/en/people/dc512eab0f030d1a3a4f886b9cb1f2bb/pizzagalli-marta/photo")[
   Marta Pizzagalli is a PhD researcher at USI Lugano working on comparative literature, intermediality, and the visual apparatuses embedded in literary texts.
 ]
 
@@ -137,7 +137,7 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
   (See above)
 ]
 
-#person("Alessandro Trevisan", affiliation-period: "2023 -- 2027")[
+#person("Alessandro Trevisan", affiliation-period: "2023 -- 2027", image: "https://www.cdh.cam.ac.uk/wp-content/uploads/2022/10/1-740x740.jpg")[
   Alessandro Trevisan works on the philosophy of language in LLMs, including multimodality and vision, especially in dialogue with Wittgenstein.
 ]
 

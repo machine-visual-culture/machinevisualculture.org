@@ -34,6 +34,9 @@ rheo --version || echo "Warning: rheo --version failed, but continuing..."
 echo "Compiling with rheo..."
 rheo compile . --html
 
+# Copy over images
+cp -r content/img build/html/img
+
 # Verify output was generated
 if [ ! -f "build/html/index.html" ]; then
   echo "Error: build/html/index.html not found after compilation"
