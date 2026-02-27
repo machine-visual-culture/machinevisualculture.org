@@ -4,6 +4,7 @@ import json
 import os
 from datetime import datetime
 from xml.sax.saxutils import escape
+import markdown as md_lib
 
 SITE_URL = "https://machinevisualculture.org"
 FEED_TITLE = "Machine Visual Culture – Events and News"
@@ -25,7 +26,7 @@ for e in events:
     <item>
       <title>{escape(e['title'])}</title>
       <link>{escape(link)}</link>
-      <description>{escape(e['description'])}</description>
+      <description><![CDATA[{md_lib.markdown(e['description'])}]]></description>
       <pubDate>{to_rfc2822(e['date'])}</pubDate>
       <guid isPermaLink="false">{escape(link)}#{e['date']}</guid>
     </item>"""

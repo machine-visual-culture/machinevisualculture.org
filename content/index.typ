@@ -37,18 +37,14 @@
 
 #let std-link = link
 
-#let event-item(title, date, description, link: none) = {
+#let event-item(title, date, description, event_id: "", link: none) = {
   context if target() == "html" {
     html.elem("div", attrs: (class: "event-item"))[
       #html.elem("div", attrs: (class: "event-meta"))[
-        #if link != none {
-          html.elem("a", attrs: (href: link))[#title]
-        } else {
-          title
-        }
+        #html.elem("div", attrs: (class: "event-title-placeholder", "data-event-date": event_id, "data-link": if link != none { link } else { "" }))[#title]
         #html.elem("div", attrs: (class: "event-date"))[#date]
       ]
-      #html.elem("p")[#description]
+      #html.elem("div", attrs: (class: "event-desc-placeholder", "data-event-date": event_id))[#description]
     ]
   } else {
     if link != none [
@@ -207,6 +203,7 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
       item.title,
       item.at("listed_date", default: item.date),
       item.description,
+      event_id: item.date,
       link: item.at("link", default: none),
     )
   }

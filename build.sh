@@ -30,9 +30,15 @@ export PATH="$RHEO_CACHE:$PATH"
 # Verify rheo is accessible
 rheo --version || echo "Warning: rheo --version failed, but continuing..."
 
+# Install Python dependencies
+pip3 install --quiet markdown
+
 # Compile the vocabulary project
 echo "Compiling with rheo..."
 rheo compile . --html
+
+# Post-process HTML: render Markdown in event fields
+python3 postprocess-events.py
 
 # Copy over images
 cp -r content/img build/html/img
