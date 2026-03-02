@@ -2,6 +2,17 @@
   doc
 }
 
+// Fallback for target() when using typst query (not rheo)
+// Returns "query" so that HTML-specific code is skipped during query
+#let target = (to: none) => {
+  if to == none { "query" } else { to == "html" }
+}
+
+// Fallback for html module when using typst query
+#let html = (
+  elem: (name, attrs: (:), body) => { body }
+)
+
 #let default-image = "https://content.fitz.ms/fitz-website/assets/impett_leonardo.jpeg"
 
 #let person(name, affiliation-period: none, image: none, body) = {
@@ -57,6 +68,29 @@
     description
   }
 }
+
+// Create a state to collect all events
+#let events-state = state("events", ())
+
+// Define the event function
+#let event(title, date, listed_date: none, description: none, link: none) = {
+  let event_data = (
+    title: title,
+    date: date,
+    listed_date: if listed_date != none { listed_date } else { date },
+    description: description,
+    link: if link != none { link } else { "" }
+  )
+
+  // Add this event to the global state
+  events-state.update(prev => prev + (event_data,))
+
+  // Return nothing
+  []
+}
+
+// Include event definitions (they will use the state and function defined above)
+#include "events.typ"
 
 #show: template.with(current-page: "index")
 
@@ -193,22 +227,30 @@ More information here: #link("https://www.biblhertz.it/en/machine-visual-culture
 
 == Events and News
 
-#let events = json("events.json")
-
-#if events.len() == 0 [
-  _No events yet._
-] else {
-  for item in events {
-    event-item(
-      item.title,
-      item.at("listed_date", default: item.date),
-      item.description,
-      event_id: item.date,
-      link: item.at("link", default: none),
-    )
+// Render events using event-item (which uses target() for HTML output)
+#context [
+  #let events = events-state.final()
+  #if events.len() == 0 [
+    _No events yet._
+  ] else {
+    for item in events {
+      event-item(
+        item.title,
+        item.listed_date,
+        item.description,
+        event_id: item.date,
+        link: if item.link != "" { item.link } else { none }
+      )
+    }
   }
-}
+]
 
 == Contact
 
 If you really must
+
+// Expose all events as metadata for RSS generation
+#context [
+  #let all-events = events-state.final()
+  #metadata(all-events) <all-events>
+]

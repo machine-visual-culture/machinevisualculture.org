@@ -9,3 +9,7 @@ merge = true
 [epub.spine]
 title = "rheo_project"
 vertebrae = ["index.typ", "about.typ"]
+
+[html.spine]
+title = "rheo_project"
+vertebrae = ["index.typ"]
